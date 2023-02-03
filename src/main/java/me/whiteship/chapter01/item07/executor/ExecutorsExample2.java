@@ -6,8 +6,10 @@ import java.util.concurrent.Executors;
 public class ExecutorsExample2 {
 
     public static void main(String[] args) {
-//        ExecutorService service = Executors.newFixedThreadPool(10);
-        ExecutorService service = Executors.newSingleThreadExecutor();
+//        ExecutorService service = Executors.newFixedThreadPool(10); //10씩
+//        ExecutorService service = Executors.newScheduledThreadPool(10); //10씩
+//        ExecutorService service = Executors.newSingleThreadExecutor(); //하나씩
+        ExecutorService service = Executors.newCachedThreadPool();  //한꺼번에
         for (int i = 0; i < 100; i++) {
             service.submit(new Task());
         }
